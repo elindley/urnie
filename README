@@ -1,0 +1,21 @@
+urnie.js - A persistant random non-repeating picker
+Jack A Perkins, 2011 - released under GPLv2
+Inspired by Max/MSP's [urn] object
+
+Create a new Urn() and then call urn.grab(['some','array','here'])
+to be given a random member of the array. Urn removes the item from
+an internal list so that future calls to grab will not pick it again
+until all other items have been grabbed and the urn has been refreshed.
+
+Urn is keyed with the value of the array that is passed in, an urn can
+therefor manage memebers for any number of unique arrays. Remember that
+urn keeps a reference of the array as a key, so you must call remove(key)
+if you wish to allow garbage collection to clean up.
+
+!! Use urns on STATIC arrays or take Great caution !!
+Changing the members in your array inbetween calls to grab will produce
+different results than you may be expecting as JS treats each array
+as a different key. Check out the demo.html for an example.
+
+Urn currently doesn't have a feature to prevent repeating elements between
+the last and first calls of seperate replenishments.

@@ -1,0 +1,45 @@
+<html>
+<head>
+
+<script type="text/javascript" src="urnie.js"></script>
+<script type="text/javascript">
+
+
+var data = new Array();
+data.push('A');
+data.push('B');
+data.push('c');
+data.push('d');
+data.push('e');
+
+var ass = new Array();
+ass[data] = 'letters';
+
+var urn = new Urn();
+urn.list();
+for(var i=0;i<8;i++){
+console.log(urn.grab(data));
+}
+
+console.log("splicing off A and B");
+data.splice(0,1);
+data.splice(0,1);
+urn.list();
+
+//using an array with different members gives us a new urn
+for(var i=0;i<10;i++){
+console.log(urn.grab(data));
+}
+//you can see the old key still in here in addition to our new truncated key
+urn.list();
+
+
+
+</script>
+</head>
+<body>
+
+hurf
+
+</body>
+</html>
